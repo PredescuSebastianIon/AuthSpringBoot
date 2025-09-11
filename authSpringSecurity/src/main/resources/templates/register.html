@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth</title>
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+<body>
+    <form id="registerForm" action="register" method="POST">
+        <h1 id="registerText">Register</h1>
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="text" name="email" placeholder="Email" required>
+        <div>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <label>
+                <input type="checkbox" onclick="passwordShow()">
+                show
+            </label>
+        </div>
+        <div>
+            <input type="password" id="repeatPassword" placeholder="Retype your password" required>
+            <label>
+                <input type="checkbox" onclick="repeatPasswordShow()">
+                show
+            </label>
+        </div>
+
+        <div id="buttons">
+            <button id="submit" type="submit">Register</button>
+            <a href="/login">Login here</a>
+        </div>
+
+        <p id="frontend-error"></p>
+        <p id="backend-error" th:text="${regError}"></p>
+
+    </form>
+
+    <script src="/js/register.js"></script>
+</body>
+</html>
